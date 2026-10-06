@@ -1,0 +1,154 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 40px;
+  background: #2878b8;
+  color: white;
+  font-family: Helvetica, Arial, sans-serif;
+
+  /* Centers the calendar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* -------------------------
+   ASCII ART
+   ------------------------- */
+
+.background-art {
+  position: fixed;
+
+  /* Center the artwork */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  margin: 0;
+  z-index: 0;
+
+  color: white;
+  opacity: 0.25;
+
+  font-size: 16px;
+  line-height: 1;
+
+  pointer-events: none;
+}
+
+
+/* -------------------------
+   CALENDAR
+   ------------------------- */
+
+.calendar {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 1000px;
+}
+
+
+/* Title */
+
+h1 {
+  text-align: center;
+  font-size: 48px;
+  margin: 0 0 30px;
+}
+
+
+/* -------------------------
+   WEEKDAYS — FLEXBOX
+   ------------------------- */
+
+.weekdays {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.weekdays div {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+/* -------------------------
+   CALENDAR DAYS — FLEXBOX
+   ------------------------- */
+
+.days {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+
+/* Every square has the same size */
+
+.day {
+  /*
+    Flexbox controls the width.
+
+    7 squares fit across each row.
+  */
+  flex: 0 0 calc((100% - 60px) / 7);
+
+  /*
+    Keeps width and height equal.
+  */
+  aspect-ratio: 1 / 1;
+
+  /*
+    Translucent navy.
+  */
+  background: rgba(10, 35, 75, 0.153);
+
+  color: white;
+
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 20px;
+
+  padding: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.284);
+}
+
+
+/* Invisible spaces before October 1 */
+
+.empty {
+  visibility: hidden;
+}
+
+
+/* -------------------------
+   RESPONSIVE
+   ------------------------- */
+
+@media (max-width: 700px) {
+
+  body {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .day {
+    font-size: 16px;
+  }
+
+  .background-art {
+    font-size: 10px;
+  }
+}
