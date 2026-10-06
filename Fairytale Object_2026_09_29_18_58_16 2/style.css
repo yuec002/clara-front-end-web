@@ -1,0 +1,188 @@
+/* GIVE IT A VOICE
+   Fairy-tale / enchanted garden
+*/
+
+
+/* BODY / NORMAL TEXT */
+
+body {
+  text-align: center;
+
+  font-family: "Playwrite BE WAL", cursive;
+
+  background: linear-gradient(
+    135deg,
+    #6f8f62,
+    #315c45,
+    #315c45,
+    #315c45
+  );
+
+  color: pink;
+  min-height: 100vh;
+
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+
+/* MAIN TITLE */
+
+h1 {
+  font-family: "Cedarville Cursive", cursive;
+
+  color: pink;
+
+  font-size: 58px;
+  font-weight: normal;
+
+  letter-spacing: 2px;
+  line-height: 1.2;
+
+  margin: 30px auto;
+}
+
+
+/* SECONDARY TITLE */
+
+h2 {
+  font-family: "Cedarville Cursive", cursive;
+
+  color: #f3e9c5;
+
+  font-size: 38px;
+  font-weight: normal;
+
+  margin: 25px auto;
+}
+
+
+/* NORMAL TEXT */
+
+p {
+  font-family: "Playwrite BE WAL", cursive;
+
+  font-size: 19px;
+  font-weight: 400;
+
+  line-height: 1.8;
+
+  color: #fff8df;
+
+  max-width: 700px;
+  margin: 25px auto;
+}
+
+
+/* LABELS */
+
+.label {
+  font-family: "Cedarville Cursive", cursive;
+
+  color: #e5d59d;
+
+  font-size: 22px;
+  font-weight: normal;
+
+  margin: 15px auto;
+  text-align: center;
+  width: fit-content;
+}
+
+
+/* SUBTITLE */
+
+.subtitle {
+  font-family: "Cedarville Cursive", cursive;
+
+  color: #f3e9c5;
+
+  font-size: 30px;
+
+  margin: 20px auto;
+}
+
+
+/* INTRODUCTION */
+
+.introduction {
+  font-family: "Playwrite BE WAL", cursive;
+
+  max-width: 800px;
+  margin: 40px auto;
+
+  line-height: 1.8;
+}
+
+
+/* DETAILS */
+
+.details {
+  font-family: "Playwrite BE WAL", cursive;
+
+  max-width: 750px;
+  margin: 40px auto;
+
+  line-height: 1.8;
+}
+
+
+/* QUOTE */
+
+blockquote {
+  font-family: "Cedarville Cursive", cursive;
+
+  color: #fff3c4;
+
+  font-size: 32px;
+  font-weight: normal;
+
+  line-height: 1.6;
+
+  max-width: 650px;
+  margin: 50px auto;
+
+  letter-spacing: 1px;
+}
+
+
+/* INSTRUCTIONS */
+
+.instructions {
+  font-family: "Playwrite BE WAL", cursive;
+
+  max-width: 700px;
+  margin: 40px auto;
+
+  line-height: 1.8;
+}
+
+
+/* ACTION */
+
+.action {
+  font-family: "Cedarville Cursive", cursive;
+
+  color: #fff8df;
+
+  font-size: 24px;
+  font-weight: normal;
+
+  margin: 35px auto;
+
+  letter-spacing: 1px;
+}
+
+
+/* FOOTER */
+
+footer {
+  font-family: "Playwrite BE WAL", cursive;
+
+  color: #e8dfb9;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  margin-top: 60px;
+}
