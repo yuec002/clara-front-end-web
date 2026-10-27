@@ -17,10 +17,10 @@ let popupOk = document.getElementById("popup-ok");
 let flower = "🌸";
 
 let cloud = [
-  "    .-~~~-.",
-  " .-~       ~-.",
-  "(             )",
-  " '-._________.-'"
+  "    .---.",
+  " .-(     )-.",
+  "(           )",
+  " '-._____.-'"
 ].join("\n");
 
 console.log("My JavaScript file is connected!");
