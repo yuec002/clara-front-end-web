@@ -1,0 +1,96 @@
+
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fce4ec;
+  color: #3b2633;
+  margin: 0;
+  padding: 30px;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  transition: background-color 0.5s ease;
+}
+
+main {
+  max-width: 700px;
+  width: 100%;
+  margin: auto;
+}
+
+.decoration {
+  font-size: 36px;
+  color: #e75480;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+h1 {
+  font-size: clamp(30px, 5vw, 48px);
+  color: #542b40;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+#message {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Whimsical buttons */
+button {
+  font-family: Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 24px;
+  cursor: pointer;
+  background: #ffb6d1;
+  color: #542b40;
+  border: 2px solid #542b40;
+  border-radius: 30px;
+  box-shadow: 3px 4px 0 #542b40;
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease,
+              background 0.2s ease;
+}
+
+button:hover {
+  background: #ffcce0;
+  transform: translate(-2px, -2px) rotate(-1deg);
+  box-shadow: 5px 6px 0 #542b40;
+}
+
+button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 2px 0 #542b40;
+}
+
+.footer {
+  margin-top: 50px;
+  color: #a66b85;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}

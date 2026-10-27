@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surprise Maker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="sketch.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <div class="decoration">✿ ⋆｡°✩</div>
+
+    <h1 id="title">Welcome to Surprise Maker</h1>
+
+    <p id="message">
+      Brighten your day with a surprise
+    </p>
+
+    <pre id="gift" class="gift"></pre>
+
+    <div class="buttons">
+      <button id="change-button">Surprise One</button>
+      <button id="surprise-button">Surprise 2</button>
+    </div>
+
+    <p class="footer">made with love ♡</p>
+  </main>
+
+  <!-- Surprise Popup -->
+  <div id="surprise-popup" class="popup-overlay">
+    <div class="popup-box" role="dialog" aria-modal="true"
+         aria-labelledby="popup-title">
+
+      <button id="close-popup" class="close-button"
+              aria-label="Close popup">×</button>
+
+      <pre id="popup-art" class="popup-art"></pre>
+
+      <h2 id="popup-title">A Little Surprise!</h2>
+
+      <p id="popup-message">
+        Pick a button and brighten your day.
+      </p>
+
+      <button id="popup-ok">Yay! 💗</button>
+    </div>
+  </div>
+</body>
+</html>
