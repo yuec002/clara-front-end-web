@@ -1,154 +1,247 @@
-
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #4A90D9;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  margin: 0;
+  min-height: 100vh;
+
+  background-color: #4A90D9;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #172D50;
 }
 
 h1 {
-    color: white;
-    font-size: 36px;
-    letter-spacing: 4px;
-    margin-bottom: 35px;
+  margin: 0 0 8px 0;
+
+  font-size: 42px;
+  letter-spacing: 3px;
+  font-weight: 800;
+}
+
+.subtitle {
+  margin: 0 0 25px 0;
+
+  font-size: 16px;
 }
 
 #board {
-    background-color: #78B5EC;
-    border-radius: 25px;
-    padding: 40px;
-    width: 90%;
-    max-width: 750px;
-    min-height: 240px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: min(90%, 800px);
+
+  background-color: #78B5EC;
+
+  border-radius: 25px;
+
+  padding: 45px 40px 35px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-shadow: 0 10px 25px rgba(23, 45, 80, 0.15);
 }
+
+/* --------------------
+   DOMINO CONTAINER
+-------------------- */
 
 #domino-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    width: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 18px;
+
+  flex-wrap: wrap;
 }
 
+/* --------------------
+   DOMINO
+-------------------- */
+
 .domino {
-    position: relative;
-    width: 85px;
-    height: 170px;
-    flex-shrink: 0;
-    background-color: white;
-    border: none;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 3px 4px 8px rgba(0,0,0,0.15);
-    cursor: pointer;
-    overflow: hidden;
-    transition: transform 0.2s ease;
+  width: 85px;
+  height: 170px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 10px;
+
+  background-color: white;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 10px rgba(23, 45, 80, 0.2);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .domino:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
+
+  box-shadow: 0 9px 16px rgba(23, 45, 80, 0.25);
 }
+
+.domino:active {
+  transform: translateY(-2px);
+}
+
+/* Each half of the domino */
 
 .domino-face {
-    width: 100%;
-    height: 50%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    justify-items: center;
-    align-items: center;
-    padding: 8px;
+  width: 100%;
+  height: 50%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+  place-items: center;
+
+  position: relative;
 }
+
+/* Middle line */
 
 .domino-face:first-child {
-    border-bottom: 2px solid #D5D5D5;
+  border-bottom: 2px solid #d7dce3;
 }
 
+/* --------------------
+   PIPS
+-------------------- */
+
 .pip {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
+  width: 11px;
+  height: 11px;
+
+  border-radius: 50%;
 }
 
 .pip.dot {
-    background-color: #172D50;
+  background-color: #172D50;
 }
 
-/* Blank navy side when flipped */
+/* --------------------
+   FLIPPED DOMINO
+-------------------- */
+
 .domino.flipped {
-    background-color: #172D50;
-}
-
-.domino.flipped .domino-face {
-    border-color: transparent;
+  background-color: #172D50;
 }
 
 .domino.flipped .pip {
-    visibility: hidden;
+  visibility: hidden;
 }
 
-menu {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    padding: 0;
-    margin-top: 30px;
+.domino.flipped .domino-face {
+  border-color: transparent;
+}
+
+/* --------------------
+   BUTTONS
+-------------------- */
+
+.buttons {
+  margin-top: 35px;
+
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  flex-wrap: wrap;
 }
 
 button {
-    background-color: #172D50;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 13px 22px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
+  border: none;
+
+  background-color: #172D50;
+  color: white;
+
+  padding: 12px 17px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 button:hover {
-    background-color: #254777;
+  background-color: #263f68;
+
+  transform: translateY(-2px);
 }
+
+button:active {
+  transform: translateY(0);
+}
+
+/* --------------------
+   MESSAGE
+-------------------- */
 
 #message {
-    color: white;
-    font-size: 14px;
-    margin-top: 20px;
+  min-height: 22px;
+
+  margin: 18px 0 0 0;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  text-align: center;
 }
 
+/* --------------------
+   MOBILE
+-------------------- */
+
 @media (max-width: 600px) {
-    h1 {
-        font-size: 27px;
-    }
 
-    #board {
-        padding: 20px 10px;
-    }
+  h1 {
+    font-size: 32px;
+  }
 
-    .domino {
-        width: 65px;
-        height: 130px;
-    }
+  #board {
+    padding: 30px 20px;
+  }
 
-    .pip {
-        width: 7px;
-        height: 7px;
-    }
+  #domino-container {
+    gap: 12px;
+  }
+
+  .domino {
+    width: 70px;
+    height: 140px;
+  }
+
+  .pip {
+    width: 9px;
+    height: 9px;
+  }
+
 }

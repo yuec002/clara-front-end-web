@@ -1,72 +1,39 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>STEPS OF 17</title>
+  <title>STEPS OF 17</title>
 
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>STEPS OF 17</h1>
+  <h1>STEPS OF 17</h1>
 
-    <!-- Domino Board -->
-    <section id="board">
+  <p class="subtitle">
+    17 is my lucky number.
+  </p>
 
-        <section id="domino-container">
+  <div id="board">
 
-            <!-- Domino 1: 0 + 1 = 1 -->
-            <div class="domino">
-                <div class="domino-face" data-value="0"></div>
-                <div class="domino-face" data-value="1"></div>
-            </div>
+    <div id="domino-container">
+      <!-- Dominoes are created here with JavaScript -->
+    </div>
 
-            <!-- Domino 2: 0 + 2 = 2 -->
-            <div class="domino">
-                <div class="domino-face" data-value="0"></div>
-                <div class="domino-face" data-value="2"></div>
-            </div>
+    <div class="buttons">
+      <button id="ascending">Sort Ascending</button>
+      <button id="descending">Sort Descending</button>
+      <button id="sum">Sum of 17</button>
+    </div>
 
-            <!-- Domino 3: 1 + 2 = 3 -->
-            <div class="domino">
-                <div class="domino-face" data-value="1"></div>
-                <div class="domino-face" data-value="2"></div>
-            </div>
+    <p id="message"></p>
 
-            <!-- Domino 4: 2 + 3 = 5 -->
-            <div class="domino">
-                <div class="domino-face" data-value="2"></div>
-                <div class="domino-face" data-value="3"></div>
-            </div>
+  </div>
 
-            <!-- Domino 5: 1 + 5 = 6 -->
-            <div class="domino">
-                <div class="domino-face" data-value="1"></div>
-                <div class="domino-face" data-value="5"></div>
-            </div>
-
-        </section>
-
-    </section>
-
-    <!-- Buttons -->
-    <menu>
-        <button id="ascending">Sort Ascending</button>
-
-        <button id="descending">Sort Descending</button>
-
-        <button id="sum-17">Sum of 17</button>
-    </menu>
-
-    <!-- Message -->
-    <p id="message">Click a domino to flip it!</p>
+  <script src="script.js"></script>
 
 </body>
-
 </html>

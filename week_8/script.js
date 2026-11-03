@@ -1,111 +1,245 @@
+// --------------------
+// STEPS OF 17
+// --------------------
 
-const dominoContainer = document.getElementById("domino-container");
-const dominoes = Array.from(document.querySelectorAll(".domino"));
-const message = document.getElementById("message");
+// My five dominoes.
+// Each domino is stored as an object in an array.
 
-// Standard pip positions
+const dominoes = [
+  {
+    id: 1,
+    top: 0,
+    bottom: 1
+  },
+  {
+    id: 2,
+    top: 0,
+    bottom: 2
+  },
+  {
+    id: 3,
+    top: 1,
+    bottom: 2
+  },
+  {
+    id: 4,
+    top: 2,
+    bottom: 3
+  },
+  {
+    id: 5,
+    top: 1,
+    bottom: 5
+  }
+];
+
+
+// --------------------
+// PIP POSITIONS
+// --------------------
+
+// Each number uses a 3 x 3 grid.
+// The numbers represent positions in that grid.
+
 const pipPositions = {
-    0: [],
-    1: [4],
-    2: [0, 8],
-    3: [0, 4, 8],
-    4: [0, 2, 6, 8],
-    5: [0, 2, 4, 6, 8],
-    6: [0, 2, 3, 5, 6, 8]
+  0: [],
+
+  1: [4],
+
+  2: [0, 8],
+
+  3: [0, 4, 8],
+
+  4: [0, 2, 6, 8],
+
+  5: [0, 2, 4, 6, 8],
+
+  6: [0, 2, 3, 5, 6, 8]
 };
 
-// Calculate the total of a domino
+
+// --------------------
+// GET TOTAL
+// --------------------
+
 function getDominoTotal(domino) {
-    const faces = domino.querySelectorAll(".domino-face");
-
-    return Number(faces[0].dataset.value) +
-           Number(faces[1].dataset.value);
+  return domino.top + domino.bottom;
 }
 
-// Generate the dots
-dominoes.forEach(function(domino) {
 
-    const faces = domino.querySelectorAll(".domino-face");
+// --------------------
+// CREATE A DOMINO HALF
+// --------------------
 
-    faces.forEach(function(face) {
+function createDominoFace(value) {
 
-        const value = Number(face.dataset.value);
+  const face = document.createElement("div");
 
-        face.innerHTML = "";
+  face.classList.add("domino-face");
 
-        for (let i = 0; i < 9; i++) {
+  // Create 9 possible pip positions.
+  for (let i = 0; i < 9; i++) {
 
-            const pip = document.createElement("div");
-            pip.classList.add("pip");
+    const pip = document.createElement("div");
 
-            if (pipPositions[value].includes(i)) {
-                pip.classList.add("dot");
-            }
+    pip.classList.add("pip");
 
-            face.appendChild(pip);
-        }
-    });
-
-    // Flip on click
-    domino.addEventListener("click", function() {
-        domino.classList.toggle("flipped");
-    });
-});
-
-// Display dominoes in a specific order
-function arrangeDominoes(list) {
-
-    list.forEach(function(domino) {
-        domino.classList.remove("flipped");
-        dominoContainer.appendChild(domino);
-    });
-
-}
-
-// ASCENDING
-document.getElementById("ascending").addEventListener("click", function() {
-
-    const sorted = [...dominoes].sort(function(a, b) {
-        return getDominoTotal(a) - getDominoTotal(b);
-    });
-
-    arrangeDominoes(sorted);
-
-    message.textContent = "Sorted: Lowest to Highest";
-});
-
-// DESCENDING
-document.getElementById("descending").addEventListener("click", function() {
-
-    const sorted = [...dominoes].sort(function(a, b) {
-        return getDominoTotal(b) - getDominoTotal(a);
-    });
-
-    arrangeDominoes(sorted);
-
-    message.textContent = "Sorted: Highest to Lowest";
-});
-
-// SUM OF 17
-document.getElementById("sum-17").addEventListener("click", function() {
-
-    const total = dominoes.reduce(function(sum, domino) {
-        return sum + getDominoTotal(domino);
-    }, 0);
-
-    if (total === 17) {
-
-        const sorted = [...dominoes].sort(function(a, b) {
-            return getDominoTotal(a) - getDominoTotal(b);
-        });
-
-        arrangeDominoes(sorted);
-
-        message.textContent = "Success! The total is 17!";
-
-    } else {
-
-        message.textContent = "The total is " + total + ", not 17.";
-
+    // Add a dot if this position belongs to the number.
+    if (pipPositions[value].includes(i)) {
+      pip.classList.add("dot");
     }
-});
+
+    face.appendChild(pip);
+  }
+
+  return face;
+}
+
+
+// --------------------
+// CREATE A DOMINO
+// --------------------
+
+function createDomino(domino) {
+
+  const element = document.createElement("div");
+
+  element.classList.add("domino");
+
+  // Store the domino ID in the HTML.
+  element.dataset.id = domino.id;
+
+  // Create the top and bottom halves.
+  const topFace = createDominoFace(domino.top);
+  const bottomFace = createDominoFace(domino.bottom);
+
+  // Store the values as data attributes too.
+  topFace.dataset.value = domino.top;
+  bottomFace.dataset.value = domino.bottom;
+
+  element.appendChild(topFace);
+  element.appendChild(bottomFace);
+
+  // Clicking the domino flips it to its blank side.
+  element.addEventListener("click", function () {
+
+    element.classList.toggle("flipped");
+
+  });
+
+  return element;
+}
+
+
+// --------------------
+// DISPLAY DOMINOES
+// --------------------
+
+function displayDominoes(list) {
+
+  const container = document.getElementById("domino-container");
+
+  // Clear the current dominoes.
+  container.innerHTML = "";
+
+  // Create each domino from the array of objects.
+  list.forEach(function(domino) {
+
+    const element = createDomino(domino);
+
+    container.appendChild(element);
+
+  });
+}
+
+
+// --------------------
+// SORT ASCENDING
+// --------------------
+
+function sortAscending() {
+
+  const sorted = [...dominoes].sort(function(a, b) {
+
+    return getDominoTotal(a) - getDominoTotal(b);
+
+  });
+
+  displayDominoes(sorted);
+
+  document.getElementById("message").textContent =
+    "Sorted from smallest to largest.";
+}
+
+
+// --------------------
+// SORT DESCENDING
+// --------------------
+
+function sortDescending() {
+
+  const sorted = [...dominoes].sort(function(a, b) {
+
+    return getDominoTotal(b) - getDominoTotal(a);
+
+  });
+
+  displayDominoes(sorted);
+
+  document.getElementById("message").textContent =
+    "Sorted from largest to smallest.";
+}
+
+
+// --------------------
+// SUM OF 17
+// --------------------
+
+function showSum() {
+
+  let total = 0;
+
+  dominoes.forEach(function(domino) {
+
+    total += getDominoTotal(domino);
+
+  });
+
+  if (total === 17) {
+
+    displayDominoes(dominoes);
+
+    document.getElementById("message").textContent =
+      "Lucky 17! The five dominoes add up to 17.";
+
+  } else {
+
+    document.getElementById("message").textContent =
+      "The total is " + total + ".";
+
+  }
+}
+
+
+// --------------------
+// BUTTON EVENTS
+// --------------------
+
+document
+  .getElementById("ascending")
+  .addEventListener("click", sortAscending);
+
+document
+  .getElementById("descending")
+  .addEventListener("click", sortDescending);
+
+document
+  .getElementById("sum")
+  .addEventListener("click", showSum);
+
+
+// --------------------
+// INITIAL DISPLAY
+// --------------------
+
+displayDominoes(dominoes);
