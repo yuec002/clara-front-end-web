@@ -1,0 +1,140 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #4A90D9;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+    font-size: 36px;
+    letter-spacing: 4px;
+    margin-bottom: 35px;
+}
+
+#board {
+    background-color: #78B5EC;
+    border-radius: 25px;
+    padding: 40px;
+    width: 90%;
+    max-width: 750px;
+}
+
+#domino-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.domino {
+    width: 85px;
+    height: 170px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 3px 4px 8px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.domino:hover {
+    transform: translateY(-5px);
+}
+
+.domino.flipped {
+    background-color: #AAB7C4;
+    transform: rotateY(180deg);
+}
+
+.domino-face {
+    width: 80%;
+    height: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.pip {
+    width: 10px;
+    height: 10px;
+    margin: 3px;
+    border-radius: 50%;
+}
+
+.pip.dot {
+    background-color: #172D50;
+}
+
+.domino.flipped .pip {
+    display: none;
+}
+
+menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0;
+    margin-top: 30px;
+}
+
+button {
+    background-color: #172D50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 13px 22px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #254777;
+}
+
+#message {
+    color: white;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    #board {
+        padding: 20px 10px;
+    }
+
+    .domino {
+        width: 65px;
+        height: 130px;
+    }
+
+    .pip {
+        width: 7px;
+        height: 7px;
+        margin: 2px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+}
