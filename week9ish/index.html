@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SurpriseMaker ♡</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="container">
+
+    <!-- Main Heading -->
+    <header>
+      <h1>SurpriseMaker ♡</h1>
+      <p>A little something unexpected, just for you.</p>
+    </header>
+
+
+    <!-- Original Surprise Feature -->
+    <section class="original-surprise">
+
+      <h2>Feeling Lucky?</h2>
+
+      <p>
+        You never know what little surprise is waiting for you.
+      </p>
+      </button>
+
+    </section>
+
+
+    <!-- Personalized Surprise Feature -->
+    <section class="personal-surprise">
+
+      <h2>Let's Make Something for You</h2>
+
+      <p class="subtitle">
+        Tell me a little about yourself and I'll find something for you ♡
+      </p>
+
+
+      <!-- Visitor Input Form -->
+      <form id="surprise-form">
+
+        <div class="form-group">
+
+          <label for="visitor-name">
+            First things first, what's your name?
+          </label>
+
+          <input
+            type="text"
+            id="visitor-name"
+            placeholder="Type your name here..."
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="visitor-mood">
+            How are you feeling today?
+          </label>
+
+          <select id="visitor-mood" required>
+
+            <option value="">Choose your mood...</option>
+
+            <option value="happy">
+              Pretty happy ☀️
+            </option>
+
+            <option value="sad">
+              A little down ☁️
+            </option>
+
+            <option value="stressed">
+              Overwhelmed 🌀
+            </option>
+
+            <option value="bored">
+              Bored out of my mind 💤
+            </option>
+
+            <option value="excited">
+              SUPER excited ✨
+            </option>
+
+            <option value="lost">
+              A little lost 🌷
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <button type="submit" class="button-3d">
+          Make Me Something! ♡
+        </button>
+
+      </form>
+
+
+      <!-- Personalized Result -->
+      <div
+        id="personal-result"
+        class="result"
+        aria-live="polite"
+        hidden
+      >
+
+        <h2 id="result-title"></h2>
+
+        <p id="result-message"></p>
+
+        <p id="result-action"></p>
+
+        <button
+          type="button"
+          id="another-surprise"
+          class="button-3d"
+        >
+          Another One! ✿
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+      <p>Made with a little bit of magic ♡</p>
+    </footer>
+
+  </main>
+
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+</html>
