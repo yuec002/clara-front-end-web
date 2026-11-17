@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SurpriseMaker - NYC Chocolatebox</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main class="container">
+
+    <header>
+      <p class="eyebrow">✿ A LITTLE ADVENTURE IN NYC ✿</p>
+      <h1>SurpriseMaker<span> ♡</span></h1>
+      <p class="subtitle">Nine little discoveries. Where will you go today?</p>
+    </header>
+
+    <section class="controls">
+      <h2>What are you in the mood for?</h2>
+
+      <div class="category-options">
+        <button class="category-btn active" data-category="all">🎲 Surprise Me</button>
+        <button class="category-btn" data-category="cafe">☕ Cafés</button>
+        <button class="category-btn" data-category="restaurant">🍽 Restaurants</button>
+      </div>
+
+      <h2>Pick your neighborhood</h2>
+
+      <select id="borough">
+        <option value="ALL">Anywhere in NYC</option>
+        <option value="1">Manhattan</option>
+        <option value="3">Brooklyn</option>
+        <option value="4">Queens</option>
+        <option value="2">The Bronx</option>
+        <option value="5">Staten Island</option>
+      </select>
+    </section>
+
+    <section class="chocolate-section">
+      <div class="section-heading">
+        <h2>Your Chocolatebox ✿</h2>
+        <p>Pick a little chocolate to discover a new place.</p>
+      </div>
+
+      <div class="chocolate-grid" id="chocolateGrid"></div>
+    </section>
+
+    <button id="surpriseButton" class="surprise-btn">
+      Surprise Me! ✨
+    </button>
+
+    <p id="status" class="status">
+      Your next NYC adventure is waiting ♡
+    </p>
+
+    <footer>
+      <p>Made with love in NYC ✿</p>
+      <p>
+        Restaurant information:
+        <a href="https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j"
+           target="_blank" rel="noopener noreferrer">NYC Open Data</a>
+      </p>
+    </footer>
+
+  </main>
+</body>
+</html>
+
