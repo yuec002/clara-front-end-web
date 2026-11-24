@@ -1,0 +1,13 @@
+/* Only what the chart needs to show up */
+
+.chart-row {
+  display: grid;
+  grid-template-columns: 2em 14em 1fr 4em;
+  gap: 8px;
+  align-items: center;
+}
+
+.bar {
+  height: 1em;
+  background: black;
+}

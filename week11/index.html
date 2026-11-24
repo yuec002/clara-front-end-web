@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NYC After Hours ✿</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="container">
+
+    <!-- Heading -->
+    <header>
+      <p class="eyebrow">✿ A LITTLE DATA PORTRAIT OF NEW YORK ✿</p>
+      <h1>NYC After Hours.</h1>
+      <p class="subtitle">
+        What does New York complain about? A snapshot of the city's 311 service requests.
+      </p>
+    </header>
+
+
+    <!-- Borough filter -->
+    <section class="controls">
+
+      <label for="borough-select">Pick a borough</label>
+
+      <select id="borough-select">
+        <option value="ALL">All of NYC</option>
+        <option value="MANHATTAN">Manhattan</option>
+        <option value="BROOKLYN">Brooklyn</option>
+        <option value="QUEENS">Queens</option>
+        <option value="BRONX">Bronx</option>
+        <option value="STATEN ISLAND">Staten Island</option>
+      </select>
+
+    </section>
+
+
+    <!-- Chart -->
+    <section class="chart-card">
+
+      <h2 id="chart-title">Top 10 complaints All of NYC</h2>
+
+      <!-- Loading / error / record count messages go here -->
+      <p id="status" class="status" aria-live="polite">Loading the city's complaints… ✿</p>
+
+      <!-- Bars are created by script.js -->
+      <div id="chart" class="chart"></div>
+
+    </section>
+
+
+    <!-- A note about the data -->
+    <p class="note">
+      <strong>A little note:</strong> 311 requests show what people <em>reported</em>,
+      not necessarily how often problems actually happen. Some neighborhoods call 311
+      more than others, so treat this as a portrait of complaints, not of the city itself.
+    </p>
+
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        Data from <a href="https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9" target="_blank">NYC Open Data</a>
+        · 311 Service Requests ♡
+      </p>
+    </footer>
+
+  </main>
+
+
+  <!-- Papa Parse (reads the CSV file) -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+  <!-- Our JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+</html>
